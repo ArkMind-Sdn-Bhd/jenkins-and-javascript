@@ -45,3 +45,20 @@ Finally click on the button of Add Webhook.
 Now when you push anything to the repo, it would trigger the webhook and Jenkins to start the build as well. 
 
 
+# Getting started with PM2 and Dotnev
+Sometimes we might use a different environment for our project.
+In order for us to switch between different environments, we will use DOTENVto define the environment for our project. 
+In this task, I was using my backend application (ExpressJS_Handson). 
+Create a few commands for different environments in package.json.
+ For example such as “ “ “pm2:dev” : “ tsc && pm2 start ecosystem.config.js –env dev” ”, “ “pm2:local” : “ tsc && pm2 start ecosystem.config.js –env local””,  and “ “pm2:test” : “ tsc && pm2 start ecosystem.config.js –env test””. 
+
+ The “—env dev” is actually telling the pm2 which environment to use inside the ecosystem.config.js. Inside the ecosystem.config.js, create the environment variables accordingly. 
+
+Open the command prompt and go to the backend project folder and execute the command of “ npm install dotenv --save “. 
+This command will install the DOTENV dependency into the project folder.
+ Meanwhile, create a few .env files in the project folder (.env.dev, .env.local, and .env.test). 
+
+ Next, execute the command of “npm run pm2:local”.
+  This command is using pm2 to serve the backend application and the environment using it is local.
+
+
